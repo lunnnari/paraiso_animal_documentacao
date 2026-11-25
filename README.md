@@ -34,30 +34,41 @@ O acompanhamento das entregas foi organizado no **Trello**, estruturado por etap
 
 ### 1.1 Requisitos Funcionais (RF)
 
-* **RF01 — Autenticação e Controle de Acesso:** O sistema deve permitir o login de usuários cadastrados, diferenciando perfis administrativos e clínicos.
-* **RF02 — Gestão de Clientes (Tutores):** O sistema deve permitir cadastrar, consultar, editar e listar os tutores responsáveis pelos animais.
-* **RF03 — Gestão de Pets:** O sistema deve permitir o cadastro de animais vinculados a um tutor, registrando nome, espécie, raça, porte, idade e histórico clínico.
-* **RF04 — Gestão de Funcionários e Veterinários:** O sistema deve manter o registro da equipe da clínica, incluindo cargos e identificação profissional dos médicos veterinários.
-* **RF05 — Registro de Atendimentos Clínicos:** O sistema deve permitir abrir e registrar atendimentos vinculando o pet, o tutor e o veterinário responsável, com data, descrição e status.
-* **RF06 — Gestão de Serviços:** O sistema deve permitir o cadastro de serviços (consultas clínicas, vacinas, exames, procedimentos) e sua associação a um ou mais atendimentos.
-* **RF07 — Controle de Produtos e Estoque:** O sistema deve gerenciar o catálogo de produtos (rações, medicamentos, insumos) e atualizar automaticamente a quantidade em estoque após o consumo ou venda em atendimento.
-* **RF08 — Fechamento e Resumo Financeiro:** O sistema deve calcular o valor total do atendimento somando os serviços realizados e os produtos adquiridos pelo cliente.
+* **RF01 — Cadastrar Clientes:** Permitir o cadastro de novos clientes (tutores) no sistema.
+* **RF02 — Listar Clientes:** Permitir a consulta e visualização da lista de clientes cadastrados.
+* **RF03 — Modificar Clientes:** Permitir a edição e atualização dos dados cadastrais dos clientes.
+* **RF04 — Excluir Clientes:** Permitir a exclusão de registros de clientes do sistema.
+* **RF05 — Cadastrar Pets:** Permitir o cadastro de pets vinculados aos seus respectivos tutores.
+* **RF06 — Listar Pets:** Permitir a consulta e visualização da lista de pets cadastrados.
+* **RF07 — Modificar Pets:** Permitir a edição e atualização das informações dos pets.
+* **RF08 — Excluir Pets:** Permitir a exclusão de registros de pets do sistema.
+* **RF09 — Cadastrar Produtos:** Permitir o cadastro de novos produtos no catálogo do pet shop e clínica.
+* **RF10 — Listar Produtos:** Permitir a consulta e visualização dos produtos disponíveis.
+* **RF11 — Modificar Produtos:** Permitir a edição e atualização dos dados e estoque dos produtos.
+* **RF12 — Excluir Produtos:** Permitir a exclusão de produtos do catálogo.
+* **RF13 — Cadastrar Serviços:** Permitir o cadastro de novos serviços oferecidos pela clínica e pet shop.
+* **RF14 — Listar Serviços:** Permitir a consulta e visualização dos serviços cadastrados.
+* **RF15 — Modificar Serviços:** Permitir a edição e atualização das informações dos serviços.
+* **RF16 — Excluir Serviços:** Permitir a exclusão de serviços do sistema.
+* **RF17 — Agendar Data Consulta:** Permitir selecionar e registrar a data para o agendamento de consultas.
+* **RF18 — Agendar Horário Consulta:** Permitir selecionar e registrar o horário específico da consulta agendada.
+* **RF19 — Agendar Confirma Consulta:** Permitir confirmar o agendamento da consulta realizada.
+* **RF20 — Funcionários Agendar Horários:** Permitir que os funcionários gerenciem e realizem o agendamento de horários de atendimento.
+* **RF21 — Funcionários Vender Serviços:** Permitir que os funcionários registrem a venda de serviços aos clientes.
 
 ### 1.2 Requisitos Não Funcionais (RNF)
 
-* **RNF01 — Usabilidade e Consistência Visual:** A interface deve seguir padrões claros de UI/UX, com navegação intuitiva entre recepção, prontuário e estoque.
-* **RNF02 — Integridade e Normalização dos Dados:** A estrutura de dados deve respeitar a 3ª Forma Normal (3FN), garantindo integridade referencial entre tutores, pets, atendimentos, serviços e produtos.
-* **RNF03 — Segurança e Rastreabilidade:** Todas as operações críticas devem estar associadas a um usuário autenticado no sistema.
-* **RNF04 — Desempenho:** As consultas de histórico de atendimentos e disponibilidade de produtos devem responder em tempo hábil para uso em balcão e consultório.
-* **RNF05 — Manutenibilidade:** A arquitetura e a documentação devem ser modulares e versionadas em Markdown no GitHub para facilitar evoluções futuras.
+* **RNF01 — Definir Aparência do Sistema:** Estabelecer a identidade visual, layout, paleta de cores e padrões de interface (UI/UX) do sistema.
+* **RNF02 — Definir Linguagem de Programação:** Padronizar as linguagens de programação e tecnologias utilizadas no desenvolvimento da aplicação.
+* **RNF03 — Definir SQL:** Utilizar banco de dados relacional estruturado em SQL para persistência, consultas e integridade das informações.
+* **RNF04 — Definir Hospedagem:** Estabelecer a infraestrutura e o ambiente de hospedagem para publicação e disponibilidade do sistema.
 
 ### 1.3 Histórias de Usuário (HU)
 
-* **HU01 (Recepcionista):** *"Como atendente da recepção, quero cadastrar rapidamente um novo tutor e seu pet para agilizar a abertura do atendimento clínico."*
-* **HU02 (Veterinário):** *"Como médico veterinário, quero registrar os serviços aplicados e observações no atendimento do pet para manter o histórico clínico atualizado."*
-* **HU03 (Gestor de Estoque):** *"Como administrador, quero que o estoque seja abatido automaticamente ao vincular produtos a um atendimento para evitar rupturas de itens essenciais."*
-* **HU04 (Cliente / Tutor):** *"Como tutor, quero visualizar de forma detalhada os serviços realizados, os produtos adquiridos e o valor total do atendimento do meu pet."*
-* **HU05 (Gestor da Clínica):** *"Como gestor, quero consultar o volume de atendimentos e o faturamento consolidado por período e por profissional."*
+* **HU01 (Recepcionista):** *"Como atendente da recepção, quero cadastrar, listar e atualizar tutores e seus pets para manter o registro da clínica sempre organizado."*
+* **HU02 (Cliente / Tutor):** *"Como tutor, quero escolher a data, o horário e confirmar a consulta do meu pet para garantir o atendimento."*
+* **HU03 (Funcionário):** *"Como funcionário, quero agendar horários e registrar a venda de serviços para agilizar o atendimento no balcão."*
+* **HU04 (Gestor / Administrador):** *"Como administrador, quero cadastrar, atualizar e gerenciar o catálogo de produtos e serviços oferecidos pelo pet shop."*
 
 ---
 
